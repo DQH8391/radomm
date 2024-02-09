@@ -87,7 +87,23 @@
                     cell2.textContent = numberContainer2.textContent;
 
                     const product = parseInt(numberContainer1.textContent) * parseInt(numberContainer2.textContent);
-                    cell3.textContent = product + 'k';
+
+// Làm tròn số và chuyển đổi thành 'k'
+const roundedProduct = roundToNearest5(product);
+cell3.textContent = roundedProduct + 'k';
+
+function roundToNearest5(number) {
+    const remainder = number % 10;
+    
+    if (remainder < 5) {
+        // Làm tròn lên 5 nếu số đuôi dưới 4
+        return Math.round(number / 10) * 10 + 5;
+    } else {
+        // Làm tròn đến hàng chục phía trước nếu số đuôi trên 5
+        return Math.round(number / 10) * 10;
+    }
+}
+
 
                     resultRow.appendChild(cell1);
                     resultRow.appendChild(cell2);
