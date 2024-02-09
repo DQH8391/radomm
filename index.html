@@ -36,8 +36,8 @@
             const resultTable = document.getElementById("resultTable");
             const resultBody = document.getElementById("resultBody");
             const resultTableContainer = document.getElementById("resultTableContainer");
-            const numberArray1 = [1, 2, 3, 4, 5, 6, 7, 8,9];
-            const numberArray2 = [10,11,12,13,14,15,16,17,18,19,20,30];
+            const numberArray1 = [1, 2, 3, 4, 5, 6, 7, 8,9,10];
+            const numberArray2 = [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,26,27,28,29,30];
             let currentIndex1 = 0;
             let currentIndex2 = 0;
             let timeoutId1, timeoutId2;
@@ -45,17 +45,17 @@
             let stopped2 = false;
 
             function displayNumbers1() {
-                const currentNumber1 = numberArray1[currentIndex1]+'k';
+                const currentNumber1 = numberArray1[currentIndex1]+'.000 vnđ';
                 numberContainer1.textContent = currentNumber1;
                 currentIndex1 = (currentIndex1 + 1) % numberArray1.length;
                 timeoutId1 = setTimeout(displayNumbers1, 5);
             }
 
             function displayNumbers2() {
-                const currentNumber2 = numberArray2[currentIndex2];
+                const currentNumber2 = (numberArray2 [ currentIndex2]);
                 numberContainer2.textContent = currentNumber2;
                 currentIndex2 = (currentIndex2 + 1) % numberArray2.length;
-                timeoutId2 = setTimeout(displayNumbers2, 5);
+                timeoutId2 = setTimeout(displayNumbers2, 8);
             }
 
             stopButton1.addEventListener("click", function () {
