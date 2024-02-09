@@ -15,6 +15,7 @@
                 <tr>
                     <th>tiền</th>
                     <th>x</th>
+                    <th>Tích</th> <!-- Thêm cột Tích -->
                 </tr>
             </thead>
             <tbody id="resultBody"></tbody>
@@ -35,8 +36,8 @@
             const resultTable = document.getElementById("resultTable");
             const resultBody = document.getElementById("resultBody");
             const resultTableContainer = document.getElementById("resultTableContainer");
-            const numberArray1 = ['10k', '20k', '30k', '40k', '50k', '60k', '70k', '80k',' 90k'];
-            const numberArray2 = [1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 'Mất Lượt', 'x2', 'Thêm Lượt', 3];
+            const numberArray1 = [10, 20, 30, 40, 50, 60, 70, 80,90];
+            const numberArray2 = [1,2,3];
             let currentIndex1 = 0;
             let currentIndex2 = 0;
             let timeoutId1, timeoutId2;
@@ -80,13 +81,21 @@
                     const resultRow = document.createElement("tr");
                     const cell1 = document.createElement("td");
                     const cell2 = document.createElement("td");
+                    const cell3 = document.createElement("td");
+
                     cell1.textContent = numberContainer1.textContent;
                     cell2.textContent = numberContainer2.textContent;
+
+                    const product = parseInt(numberContainer1.textContent) * parseInt(numberContainer2.textContent);
+                    cell3.textContent = product;
+
                     resultRow.appendChild(cell1);
                     resultRow.appendChild(cell2);
+                    resultRow.appendChild(cell3);
+
                     resultBody.appendChild(resultRow);
                     resultTable.style.display = "table";
-                    resultTableContainer.scrollTop = resultTableContainer.scrollHeight; // Cuộn xuống dòng mới
+                    resultTableContainer.scrollTop = resultTableContainer.scrollHeight;
                 } else {
                     alert("Không thể lưu khi không có ít nhất một số đang chạy.");
                 }
