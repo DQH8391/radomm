@@ -95,7 +95,7 @@ cell3.textContent = roundedProduct + 'k';
 function roundToNearest5(number) {
     const remainder = number % 10;
     
-    if (remainder < 5) {
+    if (remainder  <= 5 && remainder > 1) {
         // Làm tròn lên 5 nếu số đuôi dưới 4
         return Math.round(number / 10) * 10 + 5;
     } else {
